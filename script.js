@@ -2,20 +2,20 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const products = [
         { id: 1, name: 'Bolsa de Couro Marrom', price: 250.00, image: 'imagens/Foto1.png', size: 'media' },
-        { id: 2, name: 'Bolsa Tote Preta', price: 320.50, image: 'imagens/Foto2.png', size: 'grande' },
-        { id: 3, name: 'Clutch Dourada', price: 150.00, image: 'imagens/foto3.png', size: 'pequena' },
+        { id: 2, name: 'Bolsa Pequena', price: 320.50, image: 'imagens/Foto2.png', size: 'grande' },
+        { id: 3, name: 'Bolsa Pequena Branca', price: 150.00, image: 'imagens/foto3.png', size: 'pequena' },
         { id: 4, name: 'Bolsa de Ombro Caramelo', price: 280.00, image: 'imagens/foto4.png', size: 'media' },
-        { id: 5, name: 'Mochila Casual', price: 180.75, image: 'imagens/foto5.png', size: 'grande' },
+        { id: 5, name: 'Bolsa Prata', price: 180.75, image: 'imagens/foto5.png', size: 'grande' },
         { id: 6, name: 'Bolsa Pequena Transversal', price: 99.90, image: 'imagens/foto6.png', size: 'pequena' },
         { id: 6, name: 'Bolsa Pequena Transversal', price: 99.90, image: 'imagens/foto6.png', size: 'pequena' },
         { id: 7, name: 'Bolsa de Praia Colorida', price: 120.00, image: 'imagens/foto7.png', size: 'grande' },
         { id: 8, name: 'Bolsa de Viagem Grande', price: 450.00, image: 'imagens/foto8.png', size: 'grande' },
-        { id: 9, name: 'Bolsa de Festa Vermelha', price: 200.00, image: 'imagens/foto9.png', size: 'pequena' },
-        { id: 10, name: 'Bolsa de Couro Preta', price: 300.00, image: 'imagens/foto10.png', size: 'media' },
-        { id: 11, name: 'Bolsa de Couro Azul', price: 270.00, image: 'imagens/foto11.png', size: 'media' },
-        { id: 12, name: 'Bolsa de Couro Verde', price: 290.00, image: 'imagens/foto12.png', size: 'media' },
-        { id: 13, name: 'Bolsa de Couro Vermelha', price: 310.00, image: 'imagens/foto13.png', size: 'media' },
-        { id: 14, name: 'Bolsa de Couro Amarela', price: 330.00, image: 'imagens/foto14.png', size: 'media' }
+        { id: 9, name: 'Bolsa de Festa Pequena', price: 200.00, image: 'imagens/foto9.png', size: 'pequena' },
+        { id: 10, name: 'Bolsa de Média', price: 300.00, image: 'imagens/foto10.png', size: 'media' },
+        { id: 11, name: 'Bolsa de Couro Preta', price: 270.00, image: 'imagens/foto11.png', size: 'media' },
+        { id: 12, name: 'Bolsa de Couro Marrom', price: 290.00, image: 'imagens/foto12.png', size: 'media' },
+        { id: 13, name: 'Bolsa de Marrom', price: 310.00, image: 'imagens/foto13.png', size: 'media' },
+        { id: 14, name: 'Bolsa de Branca', price: 330.00, image: 'imagens/foto14.png', size: 'media' }
     ];
 
    
