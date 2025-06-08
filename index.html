@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Loja de Bolsas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Império das Bolsas</h1>
+            <nav>
+                <a href="#" id="home-link">Início</a>
+                <a href="#" id="cart-link">Carrinho (<span id="cart-count">0</span>)</a>
+                <a href="#" id="login-link">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="login-section" class="hidden">
+            <h2>Acesse sua Conta</h2>
+            <form id="login-form" class="auth-form">
+                <input type="email" placeholder="Seu E-mail" required>
+                <input type="password" placeholder="Sua Senha" required>
+                <button type="submit">Entrar</button>
+                <p>Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
+            </form>
+            <form id="register-form" class="auth-form hidden">
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu E-mail" required>
+                <input type="password" placeholder="Crie uma Senha" required>
+                <button type="submit">Cadastrar</button>
+                <p>Já tem uma conta? <a href="#" id="show-login">Faça Login</a></p>
+            </form>
+        </section>
+
+        <section id="products-section">
+            <h2>Nossos Produtos</h2>
+            <div id="filters">
+                <label for="price-filter">Preço até: R$ <span id="price-value">500</span></label>
+                <input type="range" id="price-filter" min="50" max="500" value="500" step="10">
+
+                <label for="size-filter">Tamanho:</label>
+                <select id="size-filter">
+                    <option value="todos">Todos</option>
+                    <option value="pequena">Pequena</option>
+                    <option value="media">Média</option>
+                    <option value="grande">Grande</option>
+                </select>
+            </div>
+            <div id="product-list" class="product-grid">
+                </div>
+        </section>
+
+        <section id="cart-section" class="hidden">
+            <h2>Seu Carrinho</h2>
+            <div id="cart-items">
+                </div>
+            <div id="cart-total">
+                <p>Total: R$ <span id="total-price">0.00</span></p>
+                <button id="checkout-btn">Finalizar Pedido</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sua Loja de Bolsas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

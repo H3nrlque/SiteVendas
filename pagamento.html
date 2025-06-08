@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Sua Loja de Bolsas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Bolsas & Cia - Pagamento</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="payment-choice-section">
+            <h2>Escolha o meio de pagamento</h2>
+            
+            <div id="payment-method-selector">
+                <button id="select-card" class="payment-method active">
+                    <img src="https://i.imgur.com/H5lss2S.png" alt="Ícone de Cartão de Crédito">
+                    Cartão de Crédito
+                </button>
+                <button id="select-pix" class="payment-method">
+                    <img src="https://i.imgur.com/JAA1LfC.png" alt="Ícone do Pix">
+                    Pix
+                </button>
+            </div>
+
+            <div id="card-payment-section">
+                <p>Este é um ambiente de simulação. <strong>Não insira dados reais de cartão de crédito.</strong></p>
+                <form id="credit-card-form" class="auth-form">
+                    <label for="card-name">Nome no Cartão</label>
+                    <input type="text" id="card-name" placeholder="Como está escrito no cartão" required>
+
+                    <label for="card-number">Número do Cartão</label>
+                    <input type="text" id="card-number" placeholder="0000 0000 0000 0000" required>
+
+                    <div class="form-row">
+                        <div>
+                            <label for="card-expiry">Validade</label>
+                            <input type="text" id="card-expiry" placeholder="MM/AA" required>
+                        </div>
+                        <div>
+                            <label for="card-cvc">CVC</label>
+                            <input type="text" id="card-cvc" placeholder="123" required>
+                        </div>
+                    </div>
+                    <button type="submit">Pagar com Cartão</button>
+                </form>
+            </div>
+
+            <div id="pix-payment-section" class="hidden">
+                <p>Realize o pagamento usando o QR Code ou o código abaixo.</p>
+                <div class="pix-container">
+                    <img src="https://i.imgur.com/g3yS3vI.png" alt="QR Code Pix Simulado" class="pix-qrcode">
+                    <p><strong>Pix Copia e Cola (Simulação)</strong></p>
+                    <div class="pix-code-area">
+                        <input type="text" id="pix-code" value="00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-4266554400005204000053039865802BR5913NOME DO LOJISTA6008BRASILIA62070503***6304E2A1" readonly>
+                        <button id="copy-pix-code">Copiar Código</button>
+                    </div>
+                    <button id="pix-paid-btn">Já Paguei</button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sua Loja de Bolsas. Ambiente Seguro (Simulação).</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectCardBtn = document.getElementById('select-card');
+            const selectPixBtn = document.getElementById('select-pix');
+            const cardSection = document.getElementById('card-payment-section');
+            const pixSection = document.getElementById('pix-payment-section');
+            const creditCardForm = document.getElementById('credit-card-form');
+            const copyPixBtn = document.getElementById('copy-pix-code');
+            const pixCodeInput = document.getElementById('pix-code');
+            const pixPaidBtn = document.getElementById('pix-paid-btn');
+
+            
+            function showPaymentMethod(method) {
+                if (method === 'card') {
+                    cardSection.classList.remove('hidden');
+                    pixSection.classList.add('hidden');
+                    selectCardBtn.classList.add('active');
+                    selectPixBtn.classList.remove('active');
+                } else if (method === 'pix') {
+                    pixSection.classList.remove('hidden');
+                    cardSection.classList.add('hidden');
+                    selectPixBtn.classList.add('active');
+                    selectCardBtn.classList.remove('active');
+                }
+            }
+
+            selectCardBtn.addEventListener('click', () => showPaymentMethod('card'));
+            selectPixBtn.addEventListener('click', () => showPaymentMethod('pix'));
+
+            creditCardForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Pagamento com cartão processado com sucesso! (Simulação)');
+                window.location.href = 'index.html';
+            });
+
+            
+            pixPaidBtn.addEventListener('click', () => {
+                alert('Pagamento com Pix confirmado! Obrigado pela compra! (Simulação)');
+                window.location.href = 'index.html';
+            });
+
+           
+            copyPixBtn.addEventListener('click', () => {
+                pixCodeInput.select();
+                document.execCommand('copy');
+                alert('Código Pix copiado para a área de transferência!');
+            });
+            showPaymentMethod('card');
+        });
+    </script>
+</body>
+</html>
