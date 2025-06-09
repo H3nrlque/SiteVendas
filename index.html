@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sua Loja de Bolsas</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,9 +17,11 @@
         <div class="container">
             <h1>Império das Bolsas</h1>
             <nav>
-                <a href="#" id="home-link">Início</a>
-                <a href="#" id="cart-link">Carrinho (<span id="cart-count">0</span>)</a>
-                <a href="#" id="login-link">Login</a>
+                <ul>
+                    <li><a href="#" id="home-link">Início</a></li>
+                    <li><a href="#" id="cart-link">Carrinho (<span id="cart-count">0</span>)</a></li>
+                    <li><a href="#" id="login-link">Login</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -22,17 +29,17 @@
     <main class="container">
         <section id="login-section" class="hidden">
             <h2>Acesse sua Conta</h2>
-            <form id="login-form" class="auth-form">
+            <form id="login-form" class="auth-form form-vertical">
                 <input type="email" placeholder="Seu E-mail" required>
                 <input type="password" placeholder="Sua Senha" required>
-                <button type="submit">Entrar</button>
+                <button type="submit" class="btn btn--primary">Entrar</button>
                 <p>Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
             </form>
-            <form id="register-form" class="auth-form hidden">
+            <form id="register-form" class="auth-form form-vertical hidden">
                 <input type="text" placeholder="Seu Nome" required>
                 <input type="email" placeholder="Seu E-mail" required>
                 <input type="password" placeholder="Crie uma Senha" required>
-                <button type="submit">Cadastrar</button>
+                <button type="submit" class="btn btn--primary">Cadastrar</button>
                 <p>Já tem uma conta? <a href="#" id="show-login">Faça Login</a></p>
             </form>
         </section>
@@ -40,7 +47,7 @@
         <section id="products-section">
             <h2>Nossos Produtos</h2>
             <div id="filters">
-                <label for="price-filter">Preço até: R$ <span id="price-value">500</span></label>
+                <label for="price-filter">Preço até: R$ <span id="price-value">500.00</span></label>
                 <input type="range" id="price-filter" min="50" max="500" value="500" step="10">
 
                 <label for="size-filter">Tamanho:</label>
@@ -60,15 +67,36 @@
             <div id="cart-items">
                 </div>
             <div id="cart-total">
-                <p>Total: R$ <span id="total-price">0.00</span></p>
-                <button id="checkout-btn">Finalizar Pedido</button>
+                <p>Total: R$ <span id="total-price">0,00</span></p>
+                <button id="checkout-btn" class="btn btn--success">Finalizar Pedido</button>
             </div>
         </section>
-
     </main>
 
-    <footer>
-        <p>&copy; 2025 Sua Loja de Bolsas. Todos os direitos reservados.</p>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h3>Império das Bolsas</h3>
+                <p>As melhores bolsas com os melhores preços. Qualidade e estilo que acompanham você.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegue</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Redes Sociais</h4>
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="Facebook">FB</a>
+                <a href="#" aria-label="Pinterest">PI</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 Império das Bolsas. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>

@@ -5,75 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento - Sua Loja de Bolsas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header>
         <div class="container">
-            <h1>Bolsas & Cia - Pagamento</h1>
+            <h1>Império das Bolsas - Pagamento</h1>
         </div>
     </header>
 
     <main class="container">
-        <section id="payment-choice-section">
+        <section id="order-summary-section" class="form-section">
+            <h2>Resumo do Pedido</h2>
+            <div class="summary-line">
+                <span>Subtotal dos produtos</span>
+                <span id="summary-subtotal">R$ 0,00</span>
+            </div>
+            <div class="summary-line">
+                <span>Taxa de Entrega</span>
+                <span id="summary-shipping">R$ 0,00</span>
+            </div>
+            <div class="summary-line total-line">
+                <span>Total a Pagar</span>
+                <span id="summary-total">R$ 0,00</span>
+            </div>
+        </section>
+
+        <section id="shipping-choice-section" class="form-section">
+            <h2>Como você prefere receber sua compra?</h2>
+            <div class="shipping-options">
+                <label>
+                    <input type="radio" name="shipping" value="delivery" checked>
+                    <span>Entrega em domicílio</span>
+                </label>
+                <label>
+                    <input type="radio" name="shipping" value="pickup">
+                    <span>Retirar na loja</span>
+                </label>
+            </div>
+            <div id="delivery-address-form">
+                <h3 class="subsection-title">Endereço de Entrega</h3>
+                <div class="form-group"><label for="cep">CEP</label><input type="text" id="cep" placeholder="00000-000" required></div>
+                <div class="form-group"><label for="address">Endereço</label><input type="text" id="address" placeholder="Rua, Avenida..." required></div>
+                <div class="form-row"><div class="form-group"><label for="number">Número</label><input type="text" id="number" required></div><div class="form-group"><label for="neighborhood">Bairro</label><input type="text" id="neighborhood" required></div></div>
+            </div>
+            <div id="pickup-info" class="hidden">
+                <h3 class="subsection-title">Retirar na Loja</h3>
+                <p>Você pode retirar seu pedido no endereço:<br><strong>Rua das Bolsas, 123 - Centro<br>Cidade Elegante - BS</strong></p>
+                <p>Horário: Seg a Sex, das 9h às 18h.</p>
+            </div>
+        </section>
+
+        <section id="payment-choice-section" class="form-section">
             <h2>Escolha o meio de pagamento</h2>
-            
             <div id="payment-method-selector">
-                <button id="select-card" class="payment-method active">
-                    <img src="https://i.imgur.com/H5lss2S.png" alt="Ícone de Cartão de Crédito">
-                    Cartão de Crédito
-                </button>
-                <button id="select-pix" class="payment-method">
-                    <img src="https://i.imgur.com/JAA1LfC.png" alt="Ícone do Pix">
-                    Pix
-                </button>
+                <button id="select-card" class="payment-method active"><img src="imagens/logoCartao.png" alt="Ícone de Cartão de Crédito"> Cartão de Crédito</button>
+                <button id="select-pix" class="payment-method"><img src="imagens/logoPix.png" alt="Ícone do Pix"> Pix</button>
             </div>
-
             <div id="card-payment-section">
-                <p>Este é um ambiente de simulação. <strong>Não insira dados reais de cartão de crédito.</strong></p>
-                <form id="credit-card-form" class="auth-form">
-                    <label for="card-name">Nome no Cartão</label>
-                    <input type="text" id="card-name" placeholder="Como está escrito no cartão" required>
-
-                    <label for="card-number">Número do Cartão</label>
-                    <input type="text" id="card-number" placeholder="0000 0000 0000 0000" required>
-
-                    <div class="form-row">
-                        <div>
-                            <label for="card-expiry">Validade</label>
-                            <input type="text" id="card-expiry" placeholder="MM/AA" required>
-                        </div>
-                        <div>
-                            <label for="card-cvc">CVC</label>
-                            <input type="text" id="card-cvc" placeholder="123" required>
-                        </div>
-                    </div>
-                    <button type="submit">Pagar com Cartão</button>
-                </form>
+                 <p>Este é um ambiente de simulação. <strong>Não insira dados reais de cartão de crédito.</strong></p>
+                <form id="credit-card-form" class="auth-form"><label for="card-name">Nome no Cartão</label><input type="text" id="card-name" placeholder="Como está escrito no cartão" required><label for="card-number">Número do Cartão</label><input type="text" id="card-number" placeholder="0000 0000 0000 0000" required><div class="form-row"><div><label for="card-expiry">Validade</label><input type="text" id="card-expiry" placeholder="MM/AA" required></div><div><label for="card-cvc">CVC</label><input type="text" id="card-cvc" placeholder="123" required></div></div><button type="submit" class="btn btn--primary">Pagar com Cartão</button></form>
             </div>
-
             <div id="pix-payment-section" class="hidden">
-                <p>Realize o pagamento usando o QR Code ou o código abaixo.</p>
-                <div class="pix-container">
-                    <img src="https://i.imgur.com/g3yS3vI.png" alt="QR Code Pix Simulado" class="pix-qrcode">
-                    <p><strong>Pix Copia e Cola (Simulação)</strong></p>
-                    <div class="pix-code-area">
-                        <input type="text" id="pix-code" value="00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-4266554400005204000053039865802BR5913NOME DO LOJISTA6008BRASILIA62070503***6304E2A1" readonly>
-                        <button id="copy-pix-code">Copiar Código</button>
-                    </div>
-                    <button id="pix-paid-btn">Já Paguei</button>
-                </div>
+                 <p>Realize o pagamento usando o QR Code ou o código abaixo.</p><div class="pix-container"><img src="https://i.imgur.com/g3yS3vI.png" alt="QR Code Pix Simulado" class="pix-qrcode"><p><strong>Pix Copia e Cola (Simulação)</strong></p><div class="pix-code-area"><input type="text" id="pix-code" value="00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-4266554400005204000053039865802BR5913NOME DO LOJISTA6008BRASILIA62070503***6304E2A1" readonly><button id="copy-pix-code">Copiar Código</button></div><button id="pix-paid-btn" class="btn btn--success">Já Paguei</button></div>
             </div>
-
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Sua Loja de Bolsas. Ambiente Seguro (Simulação).</p>
-    </footer>
+    <footer class="site-footer"></footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const shippingFee = 15.00;
+            const subtotalEl = document.getElementById('summary-subtotal');
+            const shippingEl = document.getElementById('summary-shipping');
+            const totalEl = document.getElementById('summary-total');
+            const shippingOptions = document.querySelectorAll('input[name="shipping"]');
+            const deliveryForm = document.getElementById('delivery-address-form');
+            const pickupInfo = document.getElementById('pickup-info');
             const selectCardBtn = document.getElementById('select-card');
             const selectPixBtn = document.getElementById('select-pix');
             const cardSection = document.getElementById('card-payment-section');
@@ -83,19 +94,37 @@
             const pixCodeInput = document.getElementById('pix-code');
             const pixPaidBtn = document.getElementById('pix-paid-btn');
 
-            
+            const subtotal = parseFloat(localStorage.getItem('subtotal')) || 0;
+
+            function formatCurrency(value) {
+                return `R$ ${value.toFixed(2).replace('.', ',')}`;
+            }
+
+            function updateTotals() {
+                const isDelivery = document.querySelector('input[name="shipping"][value="delivery"]').checked;
+                const currentShippingCost = isDelivery ? shippingFee : 0;
+                const finalTotal = subtotal + currentShippingCost;
+                subtotalEl.textContent = formatCurrency(subtotal);
+                shippingEl.textContent = formatCurrency(currentShippingCost);
+                totalEl.textContent = formatCurrency(finalTotal);
+            }
+
+            shippingOptions.forEach(option => {
+                option.addEventListener('change', (e) => {
+                    const isDelivery = e.target.value === 'delivery';
+                    deliveryForm.classList.toggle('hidden', !isDelivery);
+                    pickupInfo.classList.toggle('hidden', isDelivery);
+                    deliveryForm.querySelectorAll('input').forEach(i => i.required = isDelivery);
+                    updateTotals();
+                });
+            });
+
             function showPaymentMethod(method) {
-                if (method === 'card') {
-                    cardSection.classList.remove('hidden');
-                    pixSection.classList.add('hidden');
-                    selectCardBtn.classList.add('active');
-                    selectPixBtn.classList.remove('active');
-                } else if (method === 'pix') {
-                    pixSection.classList.remove('hidden');
-                    cardSection.classList.add('hidden');
-                    selectPixBtn.classList.add('active');
-                    selectCardBtn.classList.remove('active');
-                }
+                const isCard = method === 'card';
+                cardSection.classList.toggle('hidden', !isCard);
+                pixSection.classList.toggle('hidden', isCard);
+                selectCardBtn.classList.toggle('active', isCard);
+                selectPixBtn.classList.toggle('active', !isCard);
             }
 
             selectCardBtn.addEventListener('click', () => showPaymentMethod('card'));
@@ -107,19 +136,25 @@
                 window.location.href = 'index.html';
             });
 
-            
             pixPaidBtn.addEventListener('click', () => {
                 alert('Pagamento com Pix confirmado! Obrigado pela compra! (Simulação)');
                 window.location.href = 'index.html';
             });
 
-           
             copyPixBtn.addEventListener('click', () => {
                 pixCodeInput.select();
-                document.execCommand('copy');
-                alert('Código Pix copiado para a área de transferência!');
+                pixCodeInput.setSelectionRange(0, 99999);
+                try {
+                    document.execCommand('copy');
+                    alert('Código Pix copiado para a área de transferência!');
+                } catch (err) {
+                    alert('Não foi possível copiar o código.');
+                }
             });
+            
+            updateTotals();
             showPaymentMethod('card');
+            document.querySelector('input[name="shipping"]:checked').dispatchEvent(new Event('change'));
         });
     </script>
 </body>
